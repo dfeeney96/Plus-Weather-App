@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container weather-app">
+      <h2>
+        Whatever the weather, keep smiling 😊
+      </h2>
+      <form>
+        <input
+          type="text"
+          autofocus="off"
+          class="enter-city"
+          placeholder="Enter City"
+        />
+        <input type="submit" class="search-city" value="Search" />
+      </form>
+      <button>
+        Current Location
+      </button>
+      <div class="row">
+        <div class="col">
+          <h1>
+            <span id="display-city-name">
+              City
+            </span>
+            <span id="display-city-temp">
+              0
+            </span>
+          </h1>
+          <ul>
+            <li id="display-date-and-time">
+              Monday 1 Jan 00:00
+            </li>
+            <li id="display-current-weather-description">
+              Cloudy
+            </li>
+            <br />
+            <li>
+              <span>
+                Precipitation:
+              </span>
+              <span id="display-precipitation">
+                0%
+              </span>
+            </li>
+            <li>
+              <span>
+                Wind Speed:
+              </span>
+              <span id="display-wind">
+                0mph
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
