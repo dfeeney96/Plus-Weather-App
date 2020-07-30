@@ -15,7 +15,12 @@
       href="https://fonts.googleapis.com/css2?family=Mulish&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/bdf9a925b3.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
+
   <body>
     <div class="weather-app">
       <h2 id="greeting">
@@ -33,43 +38,53 @@
       <button id="current-location-button">
         Current Location 📌
       </button>
-      <div class="current-data-display">
-        <h1>
-          <span id="display-city-name">
-            City
-          </span>
-          <span id="display-city-temp">
-            0
-            <span id="temp-measurement">
-              °C
-            </span>
-          </span>
-        </h1>
-        <ul>
-          <li id="display-date-and-time">
-            Monday 1 Jan 00:00
-          </li>
-          <li id="display-current-weather-description">
-            Cloudy
-          </li>
-          <br />
-          <li>
-            <span>
-              Precipitation:
-            </span>
-            <span id="display-precipitation">
-              0%
-            </span>
-          </li>
-          <li>
-            <span>
-              Wind Speed:
-            </span>
-            <span id="display-wind">
-              0mph
-            </span>
-          </li>
-        </ul>
+
+      <div class="row">
+        <div class="col-5 current-data-display">
+          <div class="row">
+            <div class="col-10">
+              <h1>
+                <span id="display-city-name">
+                  City
+                </span>
+                <span id="display-city-temp">
+                  0
+                  <span id="temp-measurement">
+                    °C
+                  </span>
+                </span>
+              </h1>
+              <div class="col-2">
+                <i class="fas fa-cloud"></i>
+              </div>
+            </div>
+          </div>
+          <ul>
+            <li id="display-date-and-time">
+              Monday 1 Jan 00:00
+            </li>
+            <li id="display-current-weather-description">
+              Cloudy
+            </li>
+            <br />
+            <li>
+              <span>
+                Precipitation:
+              </span>
+              <span id="display-precipitation">
+                0%
+              </span>
+            </li>
+            <li>
+              <span>
+                Wind Speed:
+              </span>
+              <span id="display-wind">
+                0mph
+              </span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <p class="code-link">
@@ -79,4 +94,5 @@
       by Danielle Feeney
     </p>
   </body>
+  <script src="index.js"></script>
 </html>
