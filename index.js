@@ -56,6 +56,17 @@ function getPosition(position) {
 
     let displayCityTemp = document.querySelector("#display-city-temp");
     displayCityTemp.innerHTML = `${currentCityTemp}°C`;
+
+    let currentCityHumidity = response.data.main.humidity;
+    let displayHumidity = document.querySelector("#display-humidity");
+    displayHumidity.innerHTML = `${currentCityHumidity}%`;
+
+    let currentCityWind = response.data.wind.speed;
+    let displayWind = document.querySelector("#display-wind");
+    displayWind.innerHTML = `${currentCityWind}mph`;
+
+    let currentWeather = response.data.weather[0].description;
+    console.log(currentWeather);
   }
 
   axios.get(apiUrl).then(defaultCurrentPosition);
