@@ -66,7 +66,13 @@ function getPosition(position) {
     displayWind.innerHTML = `${currentCityWind}mph`;
 
     let currentWeather = response.data.weather[0].description;
-    console.log(currentWeather);
+
+    let icon = response.data.weather[0].icon;
+    let displayIcon = document.querySelector("#display-icon");
+    displayIcon.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${icon}@2x.png`
+    );
   }
 
   axios.get(apiUrl).then(defaultCurrentPosition);
