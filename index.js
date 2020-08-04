@@ -65,7 +65,14 @@ function getPosition(position) {
     let displayWind = document.querySelector("#display-wind");
     displayWind.innerHTML = `${currentCityWind}mph`;
 
-    let currentWeather = response.data.weather[0].description;
+    let currentDescription = response.data.weather[0].description;
+    currentCapitalisedDescription =
+      currentDescription.charAt(0).toUpperCase() + currentDescription.slice(1);
+
+    let displayWeatherDescription = document.querySelector(
+      "#display-weather-description"
+    );
+    displayWeatherDescription.innerHTML = currentCapitalisedDescription;
 
     let icon = response.data.weather[0].icon;
     let displayIcon = document.querySelector("#display-icon");
