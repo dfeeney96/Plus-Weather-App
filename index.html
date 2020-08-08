@@ -41,23 +41,32 @@
       </button>
 
       <div class="row">
-        <div class="col-5 current-data-display">
-          <div class="row">
-            <div class="col-12">
-              <h1>
-                <span id="display-city-name"> </span>
-                <span id="display-city-temp">
-                  <span id="temp-measurement"> </span>
-                </span>
-              </h1>
-              <div class="col-2"></div>
-              <img src="" alt="clear" id="display-icon" />
-            </div>
-          </div>
+        <div class="col-2">
+          <img src="" alt="clear" id="display-icon" />
+        </div>
+        <div class="col-8 current-data-display">
+          <h1>
+            <span id="display-city-name"> </span>
+          </h1>
+        </div>
+      </div>
+      <div class="row data-list">
+        <div class="col-6">
           <ul>
             <li id="display-date-and-time"></li>
+            <li>
+              <span>
+                Temperature:
+              </span>
+              <span id="display-city-temp">
+                <span id="temp-measurement"> </span>
+              </span>
+            </li>
             <li id="display-weather-description"></li>
-            <br />
+          </ul>
+        </div>
+        <div class="col-6">
+          <ul>
             <li>
               <span>
                 Humidity:

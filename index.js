@@ -37,6 +37,47 @@ displayDateAndTime.innerHTML = `${day} ${date} ${month} ${hours}:${minutes}`;
 
 //realtime data
 
+city = `london`;
+apiKey = `8ae2e00cca1079e06d3703b612c640a1`;
+apiInputCityUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+function searchLocation(response) {
+  console.log(response);
+  let currentCityName = response.data.name;
+  let displayCityName = document.querySelector("#display-city-name");
+  displayCityName.innerHTML = currentCityName;
+
+  let currentCityTemp = Math.round(response.data.main.temp);
+
+  let displayCityTemp = document.querySelector("#display-city-temp");
+  displayCityTemp.innerHTML = `${currentCityTemp}°C`;
+
+  let currentCityHumidity = response.data.main.humidity;
+  let displayHumidity = document.querySelector("#display-humidity");
+  displayHumidity.innerHTML = `${currentCityHumidity}%`;
+
+  let currentCityWind = response.data.wind.speed;
+  let displayWind = document.querySelector("#display-wind");
+  displayWind.innerHTML = `${currentCityWind}mph`;
+
+  let currentDescription = response.data.weather[0].description;
+  currentCapitalisedDescription =
+    currentDescription.charAt(0).toUpperCase() + currentDescription.slice(1);
+
+  let displayWeatherDescription = document.querySelector(
+    "#display-weather-description"
+  );
+  displayWeatherDescription.innerHTML = currentCapitalisedDescription;
+
+  let icon = response.data.weather[0].icon;
+  let displayIcon = document.querySelector("#display-icon");
+  displayIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${icon}@2x.png`
+  );
+}
+
+axios.get(apiInputCityUrl).then(searchLocation);
+
 navigator.geolocation.getCurrentPosition(getPosition);
 
 function getPosition(position) {
@@ -44,7 +85,7 @@ function getPosition(position) {
   let lon = position.coords.longitude;
 
   apiKey = `8ae2e00cca1079e06d3703b612c640a1`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  let apiCurrentLocationUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
   function defaultCurrentPosition(response) {
     console.log(response);
@@ -82,5 +123,8 @@ function getPosition(position) {
     );
   }
 
-  axios.get(apiUrl).then(defaultCurrentPosition);
+  axios.get(apiCurrentLocationUrl).then(defaultCurrentPosition);
 }
+
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getPosition);
