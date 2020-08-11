@@ -40,7 +40,8 @@ ul {
 }
 
 .weather-app {
-  background: #fff7f7;
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  background-blend-mode: screen;
   border: 1px solid black;
   border-radius: 5px;
   color: #e01171;
