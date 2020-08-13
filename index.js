@@ -85,7 +85,7 @@ function handleSubmit(event) {
   let input = document.querySelector(".enter-city");
   let cityInput = input.value.trim();
   console.log(cityInput);
-  search("cityInput");
+  search(cityInput);
 }
 
 search("London");
