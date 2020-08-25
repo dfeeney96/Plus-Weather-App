@@ -43,7 +43,7 @@ function showWeather(response) {
   let displayCityName = document.querySelector("#display-city-name");
   displayCityName.innerHTML = currentCityName;
 
-  let celsiusTemp = response.data.main.temp;
+  celsiusTemp = response.data.main.temp;
 
   let currentCityCelsiusTemp = Math.round(celsiusTemp);
 
@@ -96,6 +96,8 @@ form.addEventListener("submit", handleSubmit);
 
 function changeFahrenheit(event) {
   event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   fahrenheit = Math.round((celsiusTemp * 9) / 5 + 32);
   let displayCityTemp = document.querySelector("#display-city-temp");
   displayCityTemp.innerHTML = `${fahrenheit}°F`;
@@ -103,6 +105,18 @@ function changeFahrenheit(event) {
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", changeFahrenheit);
+
+function changeCelsius(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  celsius = Math.round(celsiusTemp);
+  let displayCityTemp = document.querySelector("#display-city-temp");
+  displayCityTemp.innerHTML = `${celsius}°C`;
+}
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", changeCelsius);
 
 let celsiusTemp = null;
 
