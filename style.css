@@ -38,7 +38,7 @@ ul {
 .search-city {
   background: #ff7e67;
   border: 1px solid #ff7e67;
-  border-radius: 5px;
+  border-radius: 30px;
   color: white;
   padding: 2px 5px;
   transition: all 200ms ease-in-out;
@@ -59,6 +59,12 @@ ul {
   margin: 30px auto 0px;
   max-width: 600px;
   padding: 5px 20px;
+}
+
+.weather-forecast {
+  color: black;
+  font-size: 15px;
+  text-align: center;
 }
 
 #current-location-button {
