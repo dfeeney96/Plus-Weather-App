@@ -17,6 +17,11 @@ ul {
   text-decoration: none;
 }
 
+.change-temp-measurement {
+  padding: 10px;
+  margin: 10px;
+}
+
 .code-link {
   text-align: center;
 }
@@ -35,6 +40,11 @@ ul {
   width: 70%;
 }
 
+.forecast-icon {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+}
 .search-city {
   background: #ff7e67;
   border: 1px solid #ff7e67;

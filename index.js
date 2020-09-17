@@ -95,10 +95,10 @@ function displayForecast(response) {
     forecast = response.data.list[index];
     forecastElement.innerHTML += ` 
       <div class="col-2">
-        <h4>
+        <strong>
           ${formatHours(forecast.dt * 1000)}
-          </h4>
-        <img src="http://openweathermap.org/img/wn/${
+          </strong>
+        <img class="forecast-icon" src="http://openweathermap.org/img/wn/${
           forecast.weather[0].icon
         }@2x.png" />
         <div class="weather-forecast-temp">
@@ -112,7 +112,7 @@ function displayForecast(response) {
 }
 
 function search(city) {
-  apiKey = `3001a9177c11baf6a479219948afbc38`;
+  apiKey = `f15c99b37dfa1cbb83fb8a2b0c300b09`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(showWeather);
 
