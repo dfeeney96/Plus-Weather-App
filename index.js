@@ -112,7 +112,7 @@ function displayForecast(response) {
 }
 
 function search(city) {
-  apiKey = `f15c99b37dfa1cbb83fb8a2b0c300b09`;
+  let apiKey = `f15c99b37dfa1cbb83fb8a2b0c300b09`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(showWeather);
 
@@ -130,6 +130,23 @@ function handleSubmit(event) {
 
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
+
+//Button
+function showPosition(position) {
+  let lat = position.coords.latitude;
+  let long = position.coords.longitude;
+  let apiKey = `f15c99b37dfa1cbb83fb8a2b0c300b09`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${metric}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function showCurrentPositionInfo(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+let locationButton = document.querySelector("#current-location-button");
+locationButton.addEventListener(click, showCurrentPositionInfo);
 
 // change Temp
 
@@ -161,3 +178,5 @@ let celsiusTemp = null;
 
 // Default
 search("London");
+
+// Current location
