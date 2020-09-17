@@ -134,9 +134,11 @@ form.addEventListener("submit", handleSubmit);
 //Button
 function showPosition(position) {
   let lat = position.coords.latitude;
-  let long = position.coords.longitude;
+  let lon = position.coords.longitude;
   let apiKey = `f15c99b37dfa1cbb83fb8a2b0c300b09`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${metric}&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(showWeather);
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -146,7 +148,7 @@ function showCurrentPositionInfo(event) {
 }
 
 let locationButton = document.querySelector("#current-location-button");
-locationButton.addEventListener(click, showCurrentPositionInfo);
+locationButton.addEventListener("click", showCurrentPositionInfo);
 
 // change Temp
 
