@@ -38,8 +38,8 @@ ul {
 .forecast-icon {
   display: block;
   margin: 0 auto;
-  padding: 0;
 }
+
 .search-city {
   background: #ff7e67;
   border: 1px solid #ff7e67;
@@ -55,11 +55,10 @@ ul {
 }
 
 .weather-app {
-  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
-  background-blend-mode: screen;
+  background: #056676;
   border: 1px solid black;
   border-radius: 5px;
-  color: #e01171;
+  color: #e8ded2;
   font-family: "Mulish", sans-serif;
   margin: 30px auto 0px;
   max-width: 600px;
@@ -73,8 +72,8 @@ ul {
 }
 
 #current-location-button {
-  background: #0a97b0;
-  border: 1px solid #0a97b0;
+  background: #be5683;
+  border: 1px solid #994367;
   border-radius: 15px;
   color: white;
   display: block;
@@ -84,7 +83,7 @@ ul {
 }
 
 #current-location-button:hover {
-  background: #046a7c;
+  background: #994367;
   cursor: pointer;
 }
 
@@ -93,4 +92,11 @@ ul {
   font-style: bolder;
   padding: 30px;
   text-align: center;
+}
+
+#fahrenheit-link {
+  color: white;
+}
+#celsius-link {
+  color: white;
 }
